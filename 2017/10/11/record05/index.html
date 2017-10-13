@@ -82,7 +82,7 @@
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkdzas266lj20qv0mjwu8.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkdy0etnjjj20kb0c475z.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/ee20bc6cgy1fkdygkurc0j216z0isq71.jpg">
-<meta property="og:updated_time" content="2017-10-11T19:34:49.627Z">
+<meta property="og:updated_time" content="2017-10-13T22:29:42.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web Crawler · 01">
 <meta name="twitter:description" content="Python爬虫入门原文传送门: 静觅-Python爬虫学习入门 需掌握： Python基础知识 urllib和urllib2库的使用 正则表达式 爬虫框架Scrapy 掌握了爬虫技能无疑说是件很有趣的事，在很多方面都能带来便捷与效率。比如说…爬取Gakki的表情包 [/xieyanxiao]">
@@ -384,7 +384,7 @@ urllib和urllib2库的使用
 </code></pre><p>而第一个参数url是必须要传送的，传送一个URL，然后执行<code>urlopen()</code>方法，返回一个response对象，返回信息便保存在里面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print response.read()</div></pre></td></tr></table></figure></p>
 <p>response对象有一个read方法，可以返回获取到的网页内容。<br><img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkdy0etnjjj20kb0c475z.jpg" alt="此处输入图片的描述"></p>
 <p>而如果不加read直接打印就会出现一下情况：</p>
-<pre><code>$ &lt;addinfourl at 139728495260376 whose fp = &lt;socket._fileobject object at 0x7f1513fb3ad0&gt;&gt;
+<pre><code>&lt;addinfourl at 139728495260376 whose fp = &lt;socket._fileobject object at 0x7f1513fb3ad0&gt;&gt;
 </code></pre><p>是一段对该对象的描述!</p>
 <h2 id="构造Request"><a href="#构造Request" class="headerlink" title="构造Request"></a>构造Request</h2><p>上面的<code>urlopen()</code>参数可以传入一个request请求，它其实就是一个Request类的实例，构造时需要传入<code>Url, Data</code>等内容。<br>将代码改写后为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import urllib2</div><div class="line"></div><div class="line">request = urllib2.Request(&quot;http://www.baidu.com&quot;)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line">print response.read()</div></pre></td></tr></table></figure></p>
 <p>运行结果一样，但建议使用这种写法，因为在构造请求时还需要加入好多内容，通过构建一个request，服务器响应请求得到应答，这样显得逻辑上清晰明确。<br>这就是最基本的网页抓取方法</p>
