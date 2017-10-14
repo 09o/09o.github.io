@@ -82,7 +82,7 @@
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkdzas266lj20qv0mjwu8.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkdy0etnjjj20kb0c475z.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/ee20bc6cgy1fkdygkurc0j216z0isq71.jpg">
-<meta property="og:updated_time" content="2017-10-13T22:29:42.388Z">
+<meta property="og:updated_time" content="2017-10-14T12:26:14.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web Crawler · 01">
 <meta name="twitter:description" content="Python爬虫入门原文传送门: 静觅-Python爬虫学习入门 需掌握： Python基础知识 urllib和urllib2库的使用 正则表达式 爬虫框架Scrapy 掌握了爬虫技能无疑说是件很有趣的事，在很多方面都能带来便捷与效率。比如说…爬取Gakki的表情包 [/xieyanxiao]">
@@ -396,8 +396,8 @@ urllib和urllib2库的使用
 <p>引入urllib库，这里是模拟bilibili登录：<br>首先需要一个字典，名字为values，参数设置了username和password，下面利用urllib的<code>urlencode()</code>方法将字典内容编码，命名为data，构建request时传入两个参数,url和data,运行程序，返回的便是POST后呈现的内容。<br>以上便是实现POST方式的传送方式。</p>
 <p><strong>GET方式</strong>：<br>GET方式则可以把参数写在网址上面，直接构建一个参数的URL出来即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">import urllib2</div><div class="line"></div><div class="line">values = &#123;&#125;</div><div class="line">values[&apos;username&apos;] = &quot;xxxxxxx@xx.com&quot;</div><div class="line">values[&apos;password&apos;] = &quot;*******&quot;</div><div class="line">data = urllib.urlencode(values)</div><div class="line">url = &quot;https://passport.bilibili.com/login&quot;</div><div class="line">geturl = url + &quot;?&quot; +data</div><div class="line">request = urllib2.Request(geturl)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line">print response.read()</div></pre></td></tr></table></figure></p>
 <p>可以查看一下，通过<code>pring geturl</code>得到：</p>
-<p><code>$ https://passport.bilibili.com/login?username=xxxxxxx%40xx.com&amp;password=%2A%2A%2A%2A%2A%2A%2A</code></p>
-<h2 id="Urllib库的高级用法"><a href="#Urllib库的高级用法" class="headerlink" title="Urllib库的高级用法"></a>Urllib库的高级用法</h2><p><strong>设置Headers</strong><br>由于有些网站不会同意直接使用上面的方式进行访问，当识别有问题，那么站点不会响应，为了完全模拟浏览器的工作，因此需要设置一些Headers的属性。</p>
+<pre><code>https://passport.bilibili.com/login?username=xxxxxxx%40xx.com&amp;password=%2A%2A%2A%2A%2A%2A%2A
+</code></pre><h2 id="Urllib库的高级用法"><a href="#Urllib库的高级用法" class="headerlink" title="Urllib库的高级用法"></a>Urllib库的高级用法</h2><p><strong>设置Headers</strong><br>由于有些网站不会同意直接使用上面的方式进行访问，当识别有问题，那么站点不会响应，为了完全模拟浏览器的工作，因此需要设置一些Headers的属性。</p>
 <p>可以使用浏览器的开发者工具(F12)，打开网络监听进行查看具体信息。以下以知乎为例，在登录后，会发现登录界面变化了，出现了新的界面，这个界面包含了许多内容，也不是一次性加载完成，实质是执行了很多次请求，一般是首先请求HTML文件，然后加载JS，CSS等，经过多次请求之后，网页的骨架和肌肉全了，整个网页的效果也就出来了：</p>
 <p><img src="http://wx2.sinaimg.cn/mw690/ee20bc6cgy1fkdygkurc0j216z0isq71.jpg" alt="此处输入图片的描述"></p>
 <p>拆分这些请求，只看第一个请求，有Requset URL，还有headers，还有response。在这个Headers中包含了许多信息，有文件编码，压缩方式，请求的agent等等。<br>其中agent就是请求的身份，如果没有写入请求身份，那么服务器不一定会响应，所以可以在headers中设置agent，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">import urllib2</div><div class="line"></div><div class="line">url = &quot;http://www.server.com/login&quot;</div><div class="line">user_agent = &quot;Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)&quot;</div><div class="line">values = &#123;&apos;username&apos;:&quot;abc&quot;, &apos;password&apos;:&quot;123&quot;&#125;</div><div class="line">headers = &#123;&apos;User-Agent&apos;: user_agent&#125;</div><div class="line">data = urllib.urlencode(values)</div><div class="line">request = urllib2.Request(url, data, headers)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line">page = response.read()</div></pre></td></tr></table></figure></p>
@@ -570,7 +570,7 @@ DELETE: 删除某一个资源。基本上也很少见，不过还是有一些地
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
