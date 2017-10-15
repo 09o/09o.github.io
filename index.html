@@ -352,132 +352,15 @@
 
       
         
-          
-            <p><img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkilqe0uvqj20dm04aaad.jpg" alt=""></p>
-<p>爬取百度贴吧文本内容，可选择是否查看楼主和打印楼层信息(本地内容)，最后输出内容以标题为文件名保存到本地。</p>
-<p>‘’’</p>
-<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><p>import urllib<br>import urllib2<br>import re</p>
-<h1 id="类用于处理页面标签的格式规范"><a href="#类用于处理页面标签的格式规范" class="headerlink" title="类用于处理页面标签的格式规范"></a>类用于处理页面标签的格式规范</h1><p>class Tool:</p>
-<pre><code># 去除img标签，7位长空格
-removeImg = re.compile(&apos;&lt;img.*?&gt;| {7}&apos;)
-# 删除超链接标签
-removeAddr = re.compile(&apos;&lt;a.*?&gt;|&lt;/a&gt;&apos;)
-# 把换行的标签换位\n
-removeLine = re.compile(&apos;&lt;tr&gt;|&lt;div&gt;|&lt;/div&gt;|&lt;p&gt;&apos;)
-# 将表格制表&lt;td&gt;替换为\t
-removeTD = re.compile(&apos;&lt;td&gt;&apos;)
-# 把段落开头为\n加两个空格
-replacePara = re.compile(&apos;&lt;p.*?&gt;&apos;)
-# 将换行符或双换行符替换为\n
-replaceBR = re.compile(&apos;&lt;br&gt;&lt;br&gt;|&lt;br&gt;&apos;)
-# 将其余标签剔除
-removeExtraTag = re.compile(&apos;&lt;.*?&gt;&apos;)
-def replace(self,x):
-    x = re.sub(self.removeImg,&quot;&quot;,x)
-    x = re.sub(self.removeAddr,&quot;&quot;,x)
-    x = re.sub(self.removeLine,&quot;\n&quot;,x)
-    x = re.sub(self.remobeTD,&quot;\t&quot;,x)
-    x = re.sub(self.replacePara,&quot;\n  &quot;,x)
-    x = re.sub(self.replaceBR,&quot;\n&quot;,x)
-    x = re.sub(self.removeExtraTag,&quot;&quot;,x)
-    return x.strip()
-</code></pre><h1 id="类百度贴吧获取"><a href="#类百度贴吧获取" class="headerlink" title="类百度贴吧获取"></a>类百度贴吧获取</h1><p>class bd_tieba:</p>
-<pre><code># 定义初始值
-def __init__(self,baseUrl,seeLZ,floorTag):
-    self.baseUrl = baseUrl
-    self.seeLZ = &apos;?see_lz=&apos;+str(seeLZ)
-    self.tool = Tool()
-    self.file = None
-    self.floor = 1
-    self.defaultTitle = u&quot;百度贴吧&quot;
-    self.floorTag = floorTag
-
-# 获取页面内容
-def getPage(self, pageNum):
-    try:
-        url = self.baseUrl + self.seeLZ + &apos;&amp;pn=&apos; + str(pageNum)
-        request = urllib2.Request(url)
-        response = urllib2.urlopen(request)
-        pageContents = response.read().decode(&apos;utf-8&apos;)
-        return pageContents
-    except urllib2.URLError, e:
-        if hasattr(e, &quot;reason&quot;):
-            print u&quot;连接百度贴吧失败，错误原因&quot;,e.reason
-            return None
-
-# 获取标题信息
-def getTitle(self, page):
-    page = self.getPage(1)
-    pattern = re.compile(r&apos;&lt;h3 class=&quot;core_title_txt.*?&gt;(.*?)&lt;/h3&gt;&apos;,re.S)
-    result = re.search(pattern, page)
-    # 检验是否存在标题
-    if result:
-        return result.group(1).strip()
-    else:
-        return None
-
-# 获取页数
-def getPageNum(self, page):
-    page = self.getPage(1)
-    pattern = re.compile(r&apos;&lt;li class=&quot;l_replay_num.*?&lt;/span&gt;.*?&lt;span.*?&gt;(.*?)&lt;/span&gt;&apos;,re.S)
-    result = re.search(pattern, page)
-    if result:
-        return result.group(1).strip()
-    else:
-        return None
-
-# 获取帖子内容
-def getContent(self, page):
-    pattern = re.compile(r&apos;&lt;div.*?id=&quot;post_content_.*?&gt;(.*?)&lt;/div&gt;&apos;,re.S)
-    items = re.findall(pattern, page)
-    contents = []
-    for item in items:
-        content = &quot;\n&quot;+self.tool.replace(item)+&quot;\n&quot;
-        contents.append(content.encode(&quot;utf-8&quot;))
-    return contents
-
-# 创建文件
-def setFileTitle(self, title):
-    if title is not None:
-        self.file = open(title + &quot;.txt&quot;, &quot;w+&quot;)
-    else:
-        self.fiel = open(self.defaultTitle + &quot;.txt&quot;, &quot;w+&quot;)
-
-# 写入内容
-def writeData(self, contents):
-    for item in contents:
-        if self.floorTag == &quot;1&quot;:
-            floorLine = &quot;\n&quot; + str(self.floor) + u&quot;==============================================================\n&quot;
-            self.file.write(floorLine)
-        self.file.write(item)
-        self.floor += 1
-
-# 开始
-def start(self):
-    indexPage = self.getPage(1)
-    pageNum = self.getPageNum(indexPage)
-    title = self.getTitle(indexPage)
-    self.setFileTitle(title)
-    if pageNum == Nome:
-        print &quot;URL已失效，请重试！&quot;
-        return
-    try:
-        print &quot;该帖子共有&quot; + str(pageNum) + &quot;页&quot;
-        for i in range(1, int(pageNum)+1):
-            print &quot;正在写入第&quot; + str(i) + &quot;页内容&quot;
-            page = self.getPage(i)
-            contents = self.getContent(page)
-            self.writeData(contents)
-    except IOError, e:
-        print &quot;写入异常，原因&quot; + e.message
-    finally:
-        print &quot;写入任务完成.. :)&quot;
-</code></pre><p>print u”请输入帖子代号”<br>baseUrl = ‘<a href="http://tieba.baidu.com/p/" target="_blank" rel="external">http://tieba.baidu.com/p/</a>‘ + str(raw_input(u’<a href="http://tieba.baidu.com/p/" target="_blank" rel="external">http://tieba.baidu.com/p/</a>‘))<br>seeLZ = raw_input(“是否选择只查看楼主，是–输入1，否–输入0\n”)<br>floorTag = raw_input(“是否写入楼层信息，是–输入1，否–输入0\n”)<br>bdtb = bd_tieba(baseUrl,seeLZ,floorTag)<br>bdtb.start()<br>‘’’</p>
-<p>如下测试：<br>需要爬取的帖子页面<br><img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkilkk29ouj20of0673z2.jpg" alt=""><br>输入要爬取页面与选择其他参数<br><img src="http://wx3.sinaimg.cn/large/ee20bc6cgy1fkilkhtne1j20o10d0wfm.jpg" alt=""><br>保存到本地结果，成功！<br><img src="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkilknechhj20qg0eptd9.jpg" alt=""></p>
-<p>周天了，好好休息一天:)<br><img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkilktj8njj20dc0a00t5.jpg" alt=""></p>
-<p>‘’’</p>
-
-          
+          <p><img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkilqe0uvqj20dm04aaad.jpg" alt=""></p>
+<p>爬取百度贴吧文本内容，可选择是否查看楼主和打印楼层信息(本地内容)，最后输出内容以标题为文件名保存到本地。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/15/record09/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
