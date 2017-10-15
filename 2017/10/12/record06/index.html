@@ -69,21 +69,21 @@
 
 
 
-<meta name="description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在  可以在代码中用try-except语句捕获异常。1234567import urllib2request = urllib2.Request(&amp;apos;http://www.xxxxx.com&amp;apos;)try:   urllib2.urlopen(request)except url">
+<meta name="description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
 <meta name="keywords" content="网络爬虫,Pythonton">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web Crawler · 02">
 <meta property="og:url" content="http://yoursite.com/2017/10/12/record06/index.html">
 <meta property="og:site_name" content="Loading 09o">
-<meta property="og:description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在  可以在代码中用try-except语句捕获异常。1234567import urllib2request = urllib2.Request(&amp;apos;http://www.xxxxx.com&amp;apos;)try:   urllib2.urlopen(request)except url">
+<meta property="og:description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkewwzl5oij20k00b9jrl.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/ee20bc6cgy1fkevvyetbwj20m009qmyb.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkevytw7qyj218g0p0hdt.jpg">
-<meta property="og:updated_time" content="2017-10-15T21:45:02.531Z">
+<meta property="og:updated_time" content="2017-10-15T23:05:56.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web Crawler · 02">
-<meta name="twitter:description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在  可以在代码中用try-except语句捕获异常。1234567import urllib2request = urllib2.Request(&amp;apos;http://www.xxxxx.com&amp;apos;)try:   urllib2.urlopen(request)except url">
+<meta name="twitter:description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkewwzl5oij20k00b9jrl.jpg">
 
 
@@ -366,11 +366,11 @@
 <li>连接不到特定的服务器</li>
 <li>服务器不存在</li>
 </ul>
+<a id="more"></a>
 <p>可以在代码中用try-except语句捕获异常。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import urllib2</div><div class="line"></div><div class="line">request = urllib2.Request(&apos;http://www.xxxxx.com&apos;)</div><div class="line">try:</div><div class="line">   urllib2.urlopen(request)</div><div class="line">except urllib2.URLError, e:</div><div class="line">   print e.reason</div></pre></td></tr></table></figure></p>
 <p>访问一个不存在的网址返回如下:</p>
 <pre><code>[Errno -2] Name or service not known
 </code></pre><p>说明了错误代号是-2，错误原因是Name or service not known</p>
-<a id="more"></a>
 <p><strong>HTTPError</strong></p>
 <p>HTTPError是URLError的子类，在利用urlopen方法发出一个请求时，服务器都会返回一个应答对象response，其中包含一个数字“状态码”。<br>举例讲，假如response是一个“重定向”，需定位到别的地址获取文档，urllib2将对此进行处理。<br>对于其他不能处理的，urlopen会产生HTTPError，对应相应的状态码，HTTP状态码表示HTTP协议所返回的相应的状态。<br>归结如下：</p>
 <pre><code>100：继续  客户端应当继续发送请求。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。
