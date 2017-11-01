@@ -80,7 +80,7 @@
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fl3bptgbojj20n00coq9f.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fl3bpsxuthj20v20endgk.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/ee20bc6cgy1fl3bptvmcyj20vz0h5nb6.jpg">
-<meta property="og:updated_time" content="2017-11-01T22:19:46.167Z">
+<meta property="og:updated_time" content="2017-11-01T22:27:51.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫实例（三）·对Tumblr内容进行爬取">
 <meta name="twitter:description" content="爬取Tumblr上的内容。如下是一个tumblr用户博客主页：如图，每个tumblr的个人空间都是一个二级域名，你甚至可以绑定你自己的域名。在个人主页上， 是一个微博式的消息列表，有文字，图片，视频等形式。消息的展现，是页面上的JavaScript脚本 通过请求Tumblr的Api来获取返回信息，然后添加到页面上的。通过API，可以省掉很多麻烦，至少 我们不必分析整个页面的html来提取需要的信息">
@@ -359,8 +359,7 @@
       
 
       
-        <p>爬取Tumblr上的内容。<br>如下是一个tumblr用户博客主页：<br><img src="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fl3bptgbojj20n00coq9f.jpg" alt=""><br>如图，每个tumblr的个人空间都是一个二级域名，你甚至可以绑定你自己的域名。在个人主页上， 是一个微博式的消息列表，有文字，图片，视频等形式。消息的展现，是页面上的JavaScript脚本 通过请求Tumblr的Api来获取返回信息，然后添加到页面上的。通过API，可以省掉很多麻烦，至少 我们不必分析整个页面的html来提取需要的信息了。</p>
-<p>为了正常使用，请在所在目录中创建两个文件：”proxies.json”和”sites.txt”.</p>
+        <p>爬取Tumblr上的内容。<br>如下是一个tumblr用户博客主页：<br><img src="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fl3bptgbojj20n00coq9f.jpg" alt=""><br>如图，每个tumblr的个人空间都是一个二级域名，你甚至可以绑定你自己的域名。在个人主页上， 是一个微博式的消息列表，有文字，图片，视频等形式。消息的展现，是页面上的JavaScript脚本 通过请求Tumblr的Api来获取返回信息，然后添加到页面上的。通过API，可以省掉很多麻烦，至少 我们不必分析整个页面的html来提取需要的信息了。<br><a id="more"></a><br>为了正常使用，请在所在目录中创建两个文件：”proxies.json”和”sites.txt”.</p>
 <p><strong>proxies.json</strong>：<br>用于在TC访问Tumblr，可能需要设置代理。所以这个文档就是用来配置代理；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">如下示例；</div><div class="line"># 默认为空：</div><div class="line">&#123;&#125;</div><div class="line"></div><div class="line">以下给出两个例子；</div><div class="line">#proxies_sample1.json</div><div class="line">&#123;</div><div class="line">  &quot;http&quot;: &quot;http://10.10.1.10:3128&quot;,</div><div class="line">  &quot;https&quot;: &quot;127.0.0.1：8787&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#proxies_sample2.json</div><div class="line">&#123;</div><div class="line">    &quot;http&quot;: &quot;socks5://user:pass@host:port&quot;,</div><div class="line">    &quot;https&quot;: &quot;socks5://127.0.0.1:1080&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>sites.txt</strong>:<br>文件用来配置我们要请求的用户空间，只需要配置用户名即可;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">如下所例：</div><div class="line">eleganthip,lolilegs,nuevoz,diggycats,stockingskon</div></pre></td></tr></table></figure></p>
