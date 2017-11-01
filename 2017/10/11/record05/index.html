@@ -69,24 +69,23 @@
 
 
 
-<meta name="description" content="Python爬虫入门原文传送门: 静觅-Python爬虫学习入门 需掌握： Python基础知识 urllib和urllib2库的使用 正则表达式 爬虫框架Scrapy">
+<meta name="description" content="原文传送门: 静觅-Python爬虫学习入门 在进行Python爬虫前应该掌握这些内容：Python基础知识，urllib和urllib2库的使用，正则表达式，爬虫框架Scrapy 学会了爬虫技能无疑说是件很有趣的事，在很多方面都能给我们带来便捷与效率。">
 <meta name="keywords" content="Python,网络爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web Crawler · 01">
+<meta property="og:title" content="爬虫基础知识（一）·关于Urllib&#x2F;Urllib2库的一些使用">
 <meta property="og:url" content="http://yoursite.com/2017/10/11/record05/index.html">
 <meta property="og:site_name" content="Loading 09o">
-<meta property="og:description" content="Python爬虫入门原文传送门: 静觅-Python爬虫学习入门 需掌握： Python基础知识 urllib和urllib2库的使用 正则表达式 爬虫框架Scrapy">
+<meta property="og:description" content="原文传送门: 静觅-Python爬虫学习入门 在进行Python爬虫前应该掌握这些内容：Python基础知识，urllib和urllib2库的使用，正则表达式，爬虫框架Scrapy 学会了爬虫技能无疑说是件很有趣的事，在很多方面都能给我们带来便捷与效率。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkdz0jg29dj20go0cjwf9.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkdz2j3mosj20hr0ezq6l.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkdzas266lj20qv0mjwu8.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkdy0etnjjj20kb0c475z.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/ee20bc6cgy1fkdygkurc0j216z0isq71.jpg">
-<meta property="og:updated_time" content="2017-10-15T23:05:56.929Z">
+<meta property="og:updated_time" content="2017-11-01T21:34:34.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web Crawler · 01">
-<meta name="twitter:description" content="Python爬虫入门原文传送门: 静觅-Python爬虫学习入门 需掌握： Python基础知识 urllib和urllib2库的使用 正则表达式 爬虫框架Scrapy">
-<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkdz0jg29dj20go0cjwf9.jpg">
+<meta name="twitter:title" content="爬虫基础知识（一）·关于Urllib&#x2F;Urllib2库的一些使用">
+<meta name="twitter:description" content="原文传送门: 静觅-Python爬虫学习入门 在进行Python爬虫前应该掌握这些内容：Python基础知识，urllib和urllib2库的使用，正则表达式，爬虫框架Scrapy 学会了爬虫技能无疑说是件很有趣的事，在很多方面都能给我们带来便捷与效率。">
+<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkdz2j3mosj20hr0ezq6l.jpg">
 
 
 
@@ -122,7 +121,7 @@
 
 
 
-  <title>Web Crawler · 01 | Loading 09o</title>
+  <title>爬虫基础知识（一）·关于Urllib/Urllib2库的一些使用 | Loading 09o</title>
   
 
 
@@ -284,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Web Crawler · 01</h1>
+          <h1 class="post-title" itemprop="name headline">爬虫基础知识（一）·关于Urllib/Urllib2库的一些使用</h1>
         
 
         <div class="post-meta">
@@ -319,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Programming-in-Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Programming in Python</span>
+                  <a href="/categories/Python编程/" itemprop="url" rel="index">
+                    <span itemprop="name">Python编程</span>
                   </a>
                 </span>
 
@@ -361,18 +360,13 @@
       
 
       
-        <h2 id="Python爬虫入门"><a href="#Python爬虫入门" class="headerlink" title="Python爬虫入门"></a>Python爬虫入门</h2><p>原文传送门: <a href="http://cuiqingcai.com/1052.html" target="_blank" rel="external">静觅-Python爬虫学习入门</a></p>
-<p>需掌握：</p>
-<pre><code>Python基础知识
-urllib和urllib2库的使用
-正则表达式
-爬虫框架Scrapy
-</code></pre><a id="more"></a>
-<p>掌握了爬虫技能无疑说是件很有趣的事，在很多方面都能带来便捷与效率。<br>比如说…爬取Gakki的表情包<img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkdz0jg29dj20go0cjwf9.jpg" alt="此处输入图片的描述"></p>
-<p><strong>[/xieyanxiao]</strong></p>
+        <p>原文传送门: <a href="http://cuiqingcai.com/1052.html" target="_blank" rel="external">静觅-Python爬虫学习入门</a></p>
+<p>在进行Python爬虫前应该掌握这些内容：Python基础知识，urllib和urllib2库的使用，正则表达式，爬虫框架Scrapy</p>
+<p>学会了爬虫技能无疑说是件很有趣的事，在很多方面都能给我们带来便捷与效率。<br><a id="more"></a><br>比如说:<br>我们可以用来爬取Gakki的表情包和一些你喜欢的图片内容：</p>
 <p><img src="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkdz2j3mosj20hr0ezq6l.jpg" alt="此处输入图片的描述"></p>
-<p><strong>或者是一些二次元可爱小姐姐</strong><br><img src="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkdzas266lj20qv0mjwu8.jpg" alt="此处输入图片的描述"></p>
-<p>在浏览网页的过程中，会看到很多好看的图片。这个过程其实就是用户在输入网址后，经过DNS服务器，找到服务器主机，向服务器发出一个请求，服务器经过解析之后，发送给用户的浏览器HTML、JS、CSS等文件，浏览器解析出来，便可以看到形形色色的图片了。用户看到的网页实质是由HTML代码构成的，爬虫爬来的便是这些内容，通过分析和过滤这些HTML代码，实现对图片、文字等资源的获取。</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkdzas266lj20qv0mjwu8.jpg" alt="此处输入图片的描述"></p>
+<hr>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>在浏览网页的过程中，会看到很多好看的图片。这个过程其实就是用户在输入网址后，经过DNS服务器，找到服务器主机，向服务器发出一个请求，服务器经过解析之后，发送给用户的浏览器HTML、JS、CSS等文件，浏览器解析出来，便可以看到形形色色的图片了。用户看到的网页实质是由HTML代码构成的，爬虫爬来的便是这些内容，通过分析和过滤这些HTML代码，实现对图片、文字等资源的获取。</p>
 <h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>Url，即统一资源定位符，也就是常说的网页，统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简介的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。<br><strong>URL的格式由三部分组成</strong>：</p>
 <pre><code>1. 第一部分是协议（或称为服务方式）。
 2. 第二部分是存有该资源的主机IP地址（有时也包括端口号）
@@ -454,8 +448,8 @@ DELETE: 删除某一个资源。基本上也很少见，不过还是有一些地
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/08/record04/" rel="next" title="S · 02">
-                <i class="fa fa-chevron-left"></i> S · 02
+              <a href="/2017/10/08/record04/" rel="next" title="只是更新了一个内容">
+                <i class="fa fa-chevron-left"></i> 只是更新了一个内容
               </a>
             
           </div>
@@ -464,8 +458,8 @@ DELETE: 删除某一个资源。基本上也很少见，不过还是有一些地
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/12/record06/" rel="prev" title="Web Crawler · 02">
-                Web Crawler · 02 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/12/record06/" rel="prev" title="爬虫基础知识（二）·URLError异常处理和Cookie的使用">
+                爬虫基础知识（二）·URLError异常处理和Cookie的使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +542,7 @@ DELETE: 删除某一个资源。基本上也很少见，不过还是有一些地
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -559,7 +553,7 @@ DELETE: 删除某一个资源。基本上也很少见，不过还是有一些地
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -570,7 +564,7 @@ DELETE: 删除某一个资源。基本上也很少见，不过还是有一些地
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -631,7 +625,7 @@ DELETE: 删除某一个资源。基本上也很少见，不过还是有一些地
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python爬虫入门"><span class="nav-number">1.</span> <span class="nav-text">Python爬虫入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Urlib库的基本使用"><span class="nav-number">3.</span> <span class="nav-text">Urlib库的基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造Request"><span class="nav-number">4.</span> <span class="nav-text">构造Request</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST和GET数据传送"><span class="nav-number">5.</span> <span class="nav-text">POST和GET数据传送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Urllib库的高级用法"><span class="nav-number">6.</span> <span class="nav-text">Urllib库的高级用法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">2.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Urlib库的基本使用"><span class="nav-number">3.</span> <span class="nav-text">Urlib库的基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造Request"><span class="nav-number">4.</span> <span class="nav-text">构造Request</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST和GET数据传送"><span class="nav-number">5.</span> <span class="nav-text">POST和GET数据传送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Urllib库的高级用法"><span class="nav-number">6.</span> <span class="nav-text">Urllib库的高级用法</span></a></li></ol></div>
             
 
           </div>

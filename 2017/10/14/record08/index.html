@@ -69,24 +69,23 @@
 
 
 
-<meta name="description" content="原文：点击查看 爬取糗事百科段子内容，通过敲一次回车来输出一个段子。源码如下：">
+<meta name="description" content="原文传送门：点击查看 爬取糗事百科段子内容，通过敲一次回车来输出一个段子。源码如下：">
 <meta name="keywords" content="Python,网络爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web Crawler · 04">
+<meta property="og:title" content="爬虫实例（一）·对糗百段子内容进行爬取">
 <meta property="og:url" content="http://yoursite.com/2017/10/14/record08/index.html">
 <meta property="og:site_name" content="Loading 09o">
-<meta property="og:description" content="原文：点击查看 爬取糗事百科段子内容，通过敲一次回车来输出一个段子。源码如下：">
+<meta property="og:description" content="原文传送门：点击查看 爬取糗事百科段子内容，通过敲一次回车来输出一个段子。源码如下：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wx4.sinaimg.cn/large/ee20bc6cgy1fkhcr5rbllj20qo0f0duk.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkhcqnwg9kj20kb0c00t0.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkhcqs3hzdj20k70c2tbz.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkhcqutc23j20jn03edfz.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkhcyclvabj20k00b9gls.jpg">
-<meta property="og:updated_time" content="2017-10-15T23:05:56.921Z">
+<meta property="og:updated_time" content="2017-11-01T21:20:35.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web Crawler · 04">
-<meta name="twitter:description" content="原文：点击查看 爬取糗事百科段子内容，通过敲一次回车来输出一个段子。源码如下：">
-<meta name="twitter:image" content="http://wx4.sinaimg.cn/large/ee20bc6cgy1fkhcr5rbllj20qo0f0duk.jpg">
+<meta name="twitter:title" content="爬虫实例（一）·对糗百段子内容进行爬取">
+<meta name="twitter:description" content="原文传送门：点击查看 爬取糗事百科段子内容，通过敲一次回车来输出一个段子。源码如下：">
+<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkhcqnwg9kj20kb0c00t0.jpg">
 
 
 
@@ -122,7 +121,7 @@
 
 
 
-  <title>Web Crawler · 04 | Loading 09o</title>
+  <title>爬虫实例（一）·对糗百段子内容进行爬取 | Loading 09o</title>
   
 
 
@@ -284,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Web Crawler · 04</h1>
+          <h1 class="post-title" itemprop="name headline">爬虫实例（一）·对糗百段子内容进行爬取</h1>
         
 
         <div class="post-meta">
@@ -319,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Programming-in-Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Programming in Python</span>
+                  <a href="/categories/Python编程/" itemprop="url" rel="index">
+                    <span itemprop="name">Python编程</span>
                   </a>
                 </span>
 
@@ -361,14 +360,13 @@
       
 
       
-        <p><img src="http://wx4.sinaimg.cn/large/ee20bc6cgy1fkhcr5rbllj20qo0f0duk.jpg" alt=""></p>
-<p>原文：<a href="http://cuiqingcai.com/990.html" target="_blank" rel="external">点击查看</a></p>
+        <p>原文传送门：<a href="http://cuiqingcai.com/990.html" target="_blank" rel="external">点击查看</a></p>
 <p>爬取糗事百科段子内容，通过敲一次回车来输出一个段子。<br>源码如下：</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">import urllib</div><div class="line">import urllib2</div><div class="line">import re</div><div class="line">import time</div><div class="line"></div><div class="line"># 创建一个类</div><div class="line">class qs_baike:</div><div class="line">    # 定义初始变量</div><div class="line">    def __init__(self):</div><div class="line">        self.pageIndex = 1</div><div class="line">        self.user_agent = &apos;Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)&apos;</div><div class="line">        self.headers = &#123;&apos;User_Agent&apos;=self.user_agent&#125;</div><div class="line">        # 存放段子的变量，每一个元素是每一页的段子</div><div class="line">        self.stories = []</div><div class="line">        # 存放程序是否继续进行的变量</div><div class="line">        self.enable = False</div><div class="line">    # 定义通过传入某一页的索引来获取代码页面</div><div class="line">    def getPage(self, pageIndex):</div><div class="line">        try:</div><div class="line">            url = &apos;http://www.qiushibaike.com/8hr/page/&apos; + str(pageIndex)</div><div class="line">            req = urllib2.Request(url, headers=self.headers)</div><div class="line">            response = urllib2.urlopen(req)</div><div class="line">            pageCode = response.read().decode(&apos;utf-8&apos;)</div><div class="line">            return pageCode</div><div class="line"></div><div class="line">        except urllib2.URLError, e:</div><div class="line">            if hasattr(e, &quot;reason&quot;):</div><div class="line">                print u&quot;连接糗事百科失败，错误原因&quot;, e.reason</div><div class="line">                return None</div><div class="line"></div><div class="line">    # 定义通过传入某一页源码获取返回不带图片的段子列表</div><div class="line">    def getPageItems(self, pageIndex):</div><div class="line">        pageCode = self.getPage(pageIndex)</div><div class="line">        if not pageCode:</div><div class="line">            print &quot;页面加载失败...&quot;</div><div class="line">            return None</div><div class="line">        pattern = re.compile(r&apos;&lt;div.*?class=&quot;author clearfix&quot;&gt;.*?&lt;h2&gt;(.*?)&lt;/h2&gt;.*?&lt;div.*?class=&quot;content&quot;&gt;.*?&lt;span&gt;(.*?)&lt;/span&gt;.*?&lt;/div&gt;.*?&apos;, re.S)</div><div class="line">        items = re.findall(pattern, pageCode)</div><div class="line">        pageStories = []</div><div class="line">        for item in items:</div><div class="line">            haveImg = re.search(&quot;img&quot;, items[1])</div><div class="line">            if not haveImg:</div><div class="line">                replaceBR = re.compile(&apos;&lt;br/&gt;&apos;)</div><div class="line">                text = re.sub(replaceBR, &quot;\n&quot;, item[1])</div><div class="line">                pageStories.append([item[0].strip(), text.strip()])</div><div class="line">            time.sleep(1)</div><div class="line">            return pageStories</div><div class="line"></div><div class="line">    # 定义加载并提取页面内容，加入到列表中</div><div class="line">    def loadPage(self):</div><div class="line">        # 如果当前未看的页数少于2页，则开始加载新一页</div><div class="line">        if self.enable = True:</div><div class="line">            if len(self.stories) &lt; 2:</div><div class="line">                # 获取新的一页</div><div class="line">                pageStories = self.getPageItems(self.pageIndex)</div><div class="line">                if pageStories:</div><div class="line">                    self.stories.append(pageStories)</div><div class="line">                    self.pageIndex += 1</div><div class="line"></div><div class="line">    # 调用该方法，每次敲回车打印输出一个段子</div><div class="line">    def getOneStory(self, pageStories, page):</div><div class="line">        # 遍历一页的段子</div><div class="line">        for story in pageStories:</div><div class="line">            # 等待用户输入</div><div class="line">            input = raw_input()</div><div class="line">            # 回车一次，判断是否要加载新页面</div><div class="line">            self.loadPage()</div><div class="line">            if input == &apos;q&apos;:</div><div class="line">                self.enable = False</div><div class="line">                return</div><div class="line">            print u&quot;第%d页\t发布人:%s\n%s&quot; % (page, story[0], story[1])</div><div class="line"></div><div class="line">    # 开始程序</div><div class="line">    def start(self):</div><div class="line">        print u&quot;正在读取糗事百科，按回车查看新段子，输入&quot;q&quot;回车退出&quot;</div><div class="line">        self.enable = True</div><div class="line">        # 先加载一页内容</div><div class="line">        self.loadPage()</div><div class="line">        # 局部变量，控制当前读到了第几页</div><div class="line">        nowPage = 0</div><div class="line">        while self.enable:</div><div class="line">            if len(self.stories) &gt; 0:</div><div class="line">                # 从全局list中获取一页的段子</div><div class="line">                pageStories = self.stories[0]</div><div class="line">                nowPage += 1</div><div class="line">                del self.sotries[0]</div><div class="line">                self.getOneStory(pageStories, nowPage)</div><div class="line"></div><div class="line">spider = qs_baike()</div><div class="line">spider.start()</div></pre></td></tr></table></figure>
 <p>以下为测试结果，但发现还存在问题；带&lt;阅读全文&gt;的长段子在程序里打印输出不完整，带图片的段子也打印了文本内容。</p>
 <p><img src="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkhcqnwg9kj20kb0c00t0.jpg" alt=""><br><img src="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkhcqs3hzdj20k70c2tbz.jpg" alt=""><br><img src="http://wx4.sinaimg.cn/mw690/ee20bc6cgy1fkhcqutc23j20jn03edfz.jpg" alt=""></p>
-<p>爬取文本内容可以说是最简单的爬虫实战了，所以啊，还是差的多了多了多了多了多了…..痛苦….难受……..想轻松的吃一顿好吃的，想懒洋洋的躺在床上，喝着酸奶逛B站看番、看视频……..<br><img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkhcyclvabj20k00b9gls.jpg" alt=""></p>
+<p>爬取文本内容应该是最简单的爬虫了，所以啊，还有很多要学呀…..痛苦….难受……..想开心的的吃上一顿好吃的，想懒洋洋的躺在床上，喝着酸奶逛B站、看番……..<br>可是最怕的就是自己把自己的感动了，认为自己一直很努力，但实则并不。<br><img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkhcyclvabj20k00b9gls.jpg" alt=""></p>
 
       
     </div>
@@ -401,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/12/record07/" rel="next" title="Web Crawler · 03">
-                <i class="fa fa-chevron-left"></i> Web Crawler · 03
+              <a href="/2017/10/12/record07/" rel="next" title="爬虫基础知识（三）·正则表达式的运用">
+                <i class="fa fa-chevron-left"></i> 爬虫基础知识（三）·正则表达式的运用
               </a>
             
           </div>
@@ -411,8 +409,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/15/record09/" rel="prev" title="Web Crawler · 05">
-                Web Crawler · 05 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/15/record09/" rel="prev" title="爬虫实例（二）·对贴吧文本内容进行爬取">
+                爬虫实例（二）·对贴吧文本内容进行爬取 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -486,7 +484,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -497,7 +495,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -508,7 +506,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="网络爬虫,Pythonton," />
+  <meta name="keywords" content="Python,网络爬虫," />
 
 
 
@@ -69,22 +69,20 @@
 
 
 
-<meta name="description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
-<meta name="keywords" content="网络爬虫,Pythonton">
+<meta name="description" content="URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
+<meta name="keywords" content="Python,网络爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web Crawler · 02">
+<meta property="og:title" content="爬虫基础知识（二）·URLError异常处理和Cookie的使用">
 <meta property="og:url" content="http://yoursite.com/2017/10/12/record06/index.html">
 <meta property="og:site_name" content="Loading 09o">
-<meta property="og:description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
+<meta property="og:description" content="URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkewwzl5oij20k00b9jrl.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/ee20bc6cgy1fkevvyetbwj20m009qmyb.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkevytw7qyj218g0p0hdt.jpg">
-<meta property="og:updated_time" content="2017-10-15T23:05:56.925Z">
+<meta property="og:updated_time" content="2017-11-01T21:27:22.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web Crawler · 02">
-<meta name="twitter:description" content="URLError异常处理 URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
-<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkewwzl5oij20k00b9jrl.jpg">
+<meta name="twitter:title" content="爬虫基础知识（二）·URLError异常处理和Cookie的使用">
+<meta name="twitter:description" content="URLError可能产生原因：  网络无连接 连接不到特定的服务器 服务器不存在">
+<meta name="twitter:image" content="http://wx1.sinaimg.cn/large/ee20bc6cgy1fkevvyetbwj20m009qmyb.jpg">
 
 
 
@@ -120,7 +118,7 @@
 
 
 
-  <title>Web Crawler · 02 | Loading 09o</title>
+  <title>爬虫基础知识（二）·URLError异常处理和Cookie的使用 | Loading 09o</title>
   
 
 
@@ -282,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Web Crawler · 02</h1>
+          <h1 class="post-title" itemprop="name headline">爬虫基础知识（二）·URLError异常处理和Cookie的使用</h1>
         
 
         <div class="post-meta">
@@ -317,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Programming-in-Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Programming in Python</span>
+                  <a href="/categories/Python编程/" itemprop="url" rel="index">
+                    <span itemprop="name">Python编程</span>
                   </a>
                 </span>
 
@@ -359,8 +357,7 @@
       
 
       
-        <h2 id="URLError异常处理"><a href="#URLError异常处理" class="headerlink" title="URLError异常处理"></a>URLError异常处理</h2><p><img src="http://wx3.sinaimg.cn/mw690/ee20bc6cgy1fkewwzl5oij20k00b9jrl.jpg" alt=""></p>
-<p><strong>URLError</strong><br>可能产生原因：</p>
+        <p><strong>URLError</strong><br>可能产生原因：</p>
 <ul>
 <li>网络无连接</li>
 <li>连接不到特定的服务器</li>
@@ -445,8 +442,6 @@ Value = 0
 <p><img src="http://wx1.sinaimg.cn/large/ee20bc6cgy1fkevvyetbwj20m009qmyb.jpg" alt="此处输入图片的描述"></p>
 <p><strong>3.从文件中获取Cookie并访问</strong><br>以访问百度为例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import urllib2</div><div class="line">import cookielib</div><div class="line"></div><div class="line">cookie = cookielib.MozillaCookieJar()</div><div class="line">cookie.load(&apos;cookiesaved.txt&apos;, ignore_discard=True, ignore_expires=True)</div><div class="line">req = urllib2.Request(&quot;http://www.baidu.com&quot;)</div><div class="line">handler = urllib2.HTTPCookieProcessor(cookie)</div><div class="line">opener = urllib2.build_opener(handler)</div><div class="line">response = opener.open(req)</div><div class="line">print response.read()</div></pre></td></tr></table></figure></p>
 <p><strong>4.利用cookie模拟网站登录</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#知乎</div><div class="line">import urllib</div><div class="line">import urllib2</div><div class="line">import cookielib</div><div class="line"></div><div class="line">filename = &apos;cookie.txt&apos;</div><div class="line">cookie = cookielib.MozillaCookieJar(filename)</div><div class="line">handler = urllib2.HTTPCookieProcessor(cookie)</div><div class="line">opener = urllib2.build_opener(handler)</div><div class="line">postdata = urllib.urlencode(&#123;</div><div class="line">            &apos;phone_num&apos;:&apos;*****@**.com&apos;,</div><div class="line">            &apos;password&apos;:&apos;*****&apos;&#125;)</div><div class="line">loginUrl = &apos;https://www.zhihu.com/#signin&apos;</div><div class="line">result = opener.open(loginUrl, postdata)</div><div class="line">cookie.save(ignore_discard=True, ignore_expires=True)</div><div class="line">gradeUrl = &apos;https://www.zhihu.com/collection/185811026&apos;</div><div class="line">result = opener.open(gradeUrl)</div><div class="line">print result.read()</div></pre></td></tr></table></figure></p>
-<hr>
-<p>突然窜出一个秃子～～<br><img src="http://wx1.sinaimg.cn/mw690/ee20bc6cgy1fkevytw7qyj218g0p0hdt.jpg" alt="此处输入图片的描述"></p>
 
       
     </div>
@@ -464,9 +459,9 @@ Value = 0
       
         <div class="post-tags">
           
-            <a href="/tags/网络爬虫/" rel="tag"># 网络爬虫</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/Pythonton/" rel="tag"># Pythonton</a>
+            <a href="/tags/网络爬虫/" rel="tag"># 网络爬虫</a>
           
         </div>
       
@@ -479,8 +474,8 @@ Value = 0
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/11/record05/" rel="next" title="Web Crawler · 01">
-                <i class="fa fa-chevron-left"></i> Web Crawler · 01
+              <a href="/2017/10/11/record05/" rel="next" title="爬虫基础知识（一）·关于Urllib/Urllib2库的一些使用">
+                <i class="fa fa-chevron-left"></i> 爬虫基础知识（一）·关于Urllib/Urllib2库的一些使用
               </a>
             
           </div>
@@ -489,8 +484,8 @@ Value = 0
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/12/record07/" rel="prev" title="Web Crawler · 03">
-                Web Crawler · 03 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/12/record07/" rel="prev" title="爬虫基础知识（三）·正则表达式的运用">
+                爬虫基础知识（三）·正则表达式的运用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -573,7 +568,7 @@ Value = 0
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,7 +579,7 @@ Value = 0
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -595,7 +590,7 @@ Value = 0
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -656,7 +651,7 @@ Value = 0
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URLError异常处理"><span class="nav-number">1.</span> <span class="nav-text">URLError异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie的使用"><span class="nav-number">2.</span> <span class="nav-text">Cookie的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie的使用"><span class="nav-number">1.</span> <span class="nav-text">Cookie的使用</span></a></li></ol></div>
             
 
           </div>
