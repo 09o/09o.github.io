@@ -1879,7 +1879,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ecffa2;
+  background: #16ff79;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2717,15 +2717,7 @@ embed {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .header {
-  background: url("http://wx3.sinaimg.cn/large/ee20bc6cgy1fl4i7y5o78j21kw0pgkbk.jpg");
-}
-.site-subtitle {
-  font-size: 15px;
-  color: #fff;
-}
-.site-title {
-  font-size: 40px;
-  font-weight: bold;
+  background: url("http://wx4.sinaimg.cn/large/ee20bc6cgy1fl4igdno8fj21kw0ej4d9.jpg");
 }
 .brand {
   background: transparent;
@@ -2745,12 +2737,6 @@ a {
 }
 a:hover {
   color: #ff106c;
-  border-bottom-color: #ff106c;
-}
-.menu .menu-item a {
-  font-size: 14px;
-}
-.menu .menu-item a:hover {
   border-bottom-color: #ff106c;
 }
 .site-description {
