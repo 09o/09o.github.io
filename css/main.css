@@ -1879,7 +1879,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cfffff;
+  background: #d1e00e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2717,19 +2717,18 @@ embed {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .header {
-  background: url("http://wx4.sinaimg.cn/large/ee20bc6cgy1fl4igdno8fj21kw0ej4d9.jpg");
+  background: url("http://wx3.sinaimg.cn/large/ee20bc6cgy1fl4jp78eygj21kw0f2jvd.jpg");
+}
+.site-subtitle {
+  font-size: 15px;
+  color: #fff;
 }
 .site-title {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
-  margin-top: 20px;
-  padding-left: 0;
-  text-align: center;
-  background: rgba(240,240,240,0.5);
-  margin-left: auto;
-  margin-right: auto;
-  width: 530px;
-  border-radius: initial;
+}
+.brand {
+  background: transparent;
 }
 a {
   color: rgba(0,0,0,0.8);
