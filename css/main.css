@@ -1879,7 +1879,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6cff93;
+  background: #cfffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2719,17 +2719,16 @@ embed {
 .header {
   background: url("http://wx4.sinaimg.cn/large/ee20bc6cgy1fl4igdno8fj21kw0ej4d9.jpg");
 }
-.brand {
-  background: transparent;
-}
 .site-title {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
+  margin-top: 20px;
   padding-left: 0;
   text-align: center;
   background: rgba(240,240,240,0.5);
   margin-left: auto;
   margin-right: auto;
+  width: 530px;
   border-radius: initial;
 }
 a {
