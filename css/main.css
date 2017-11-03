@@ -1879,7 +1879,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d1e00e;
+  background: #b8d40e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2763,4 +2763,10 @@ code {
 body {
   color: #444;
   font-size: 16px;
+}
+#sidebar {
+  background: url("http://wx4.sinaimg.cn/large/ee20bc6cgy1fl5fbzbtt8j20dw0u0diy.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
