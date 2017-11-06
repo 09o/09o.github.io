@@ -69,13 +69,13 @@
 
 
 
-<meta name="description" content="爬取拉勾网职位信息，并保存为xls格式。 xlwt库的基本使用要保存为xls格式文档，需要用到xlwt库。该库的基本使用如下所示：12345678910111213141516171819202122232425262728293031323334import xlwt def write_excel():    f = xlwt.Workbook() #创建工作簿     sheet1 = f.">
+<meta name="description" content="爬取拉勾网职位信息，并保存为xls格式。">
 <meta name="keywords" content="Python,网络爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="record13">
 <meta property="og:url" content="http://goutokyo.com/2017/11/06/record13/index.html">
 <meta property="og:site_name" content="秒速5センチメートル">
-<meta property="og:description" content="爬取拉勾网职位信息，并保存为xls格式。 xlwt库的基本使用要保存为xls格式文档，需要用到xlwt库。该库的基本使用如下所示：12345678910111213141516171819202122232425262728293031323334import xlwt def write_excel():    f = xlwt.Workbook() #创建工作簿     sheet1 = f.">
+<meta property="og:description" content="爬取拉勾网职位信息，并保存为xls格式。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx2.sinaimg.cn/large/ee20bc6cgy1fl8rdfzxw3j20q00e6dic.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/ee20bc6cgy1fl8rdg3op5j20q50daq69.jpg">
@@ -83,10 +83,10 @@
 <meta property="og:image" content="http://wx1.sinaimg.cn/large/ee20bc6cgy1fl8rdg5ubqj20ow0ekwig.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/large/ee20bc6cgy1fl8rdfl5gqj20kc0bx0sy.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/ee20bc6cgy1fl8rivldzyj215l0kl7h3.jpg">
-<meta property="og:updated_time" content="2017-11-06T15:16:50.061Z">
+<meta property="og:updated_time" content="2017-11-06T15:19:01.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="record13">
-<meta name="twitter:description" content="爬取拉勾网职位信息，并保存为xls格式。 xlwt库的基本使用要保存为xls格式文档，需要用到xlwt库。该库的基本使用如下所示：12345678910111213141516171819202122232425262728293031323334import xlwt def write_excel():    f = xlwt.Workbook() #创建工作簿     sheet1 = f.">
+<meta name="twitter:description" content="爬取拉勾网职位信息，并保存为xls格式。">
 <meta name="twitter:image" content="http://wx2.sinaimg.cn/large/ee20bc6cgy1fl8rdfzxw3j20q00e6dic.jpg">
 
 
@@ -395,7 +395,7 @@
       
 
       
-        <p>爬取拉勾网职位信息，并保存为xls格式。</p>
+        <p>爬取拉勾网职位信息，并保存为xls格式。<br><a id="more"></a></p>
 <h2 id="xlwt库的基本使用"><a href="#xlwt库的基本使用" class="headerlink" title="xlwt库的基本使用"></a>xlwt库的基本使用</h2><p>要保存为xls格式文档，需要用到<a href="https://pypi.python.org/pypi/xlwt" target="_blank" rel="external">xlwt库</a>。<br>该库的基本使用如下所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_excel</span><span class="params">()</span>:</span></div><div class="line">    f = xlwt.Workbook() <span class="comment">#创建工作簿</span></div><div class="line"> </div><div class="line">    sheet1 = f.add_sheet(<span class="string">u'sheet1'</span>,cell_overwrite_ok=<span class="keyword">True</span>) <span class="comment">#创建sheet</span></div><div class="line">    row0= [<span class="string">u'编号'</span>,<span class="string">u'姓名'</span>,<span class="string">u'性别'</span>,<span class="string">u'生日'</span>]</div><div class="line">    </div><div class="line">    <span class="comment">#生成第0行</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(row0)):</div><div class="line">        sheet1.write(<span class="number">0</span>,i,row0[i])</div><div class="line"> </div><div class="line">    row1 = [<span class="string">u'1'</span>,<span class="string">u'张三'</span>,<span class="string">u'男'</span>]</div><div class="line">    row2 = [<span class="string">u'2'</span>,<span class="string">u'李四'</span>,<span class="string">u'女'</span>]</div><div class="line">    date = <span class="string">'1990-01-04'</span></div><div class="line"> </div><div class="line">    <span class="comment">#生成第一行</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(row1)):</div><div class="line">        sheet1.write(<span class="number">1</span>,i,row1[i])</div><div class="line"> </div><div class="line">    <span class="comment">#生成第二行</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(row2)):</div><div class="line">        sheet1.write(<span class="number">2</span>,i,row2[i])</div><div class="line"> </div><div class="line">    <span class="comment">#写入合并的单元格数据1990-01-04</span></div><div class="line">    sheet1.write_merge(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,date)</div><div class="line"> </div><div class="line">    f.save(<span class="string">r'E:\python\learn\demo1.xls'</span>) <span class="comment">#保存文件</span></div><div class="line"> </div><div class="line"><span class="comment">#python写入Excel文档</span></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:  </div><div class="line">    <span class="comment">#generate_workbook()  </span></div><div class="line">    <span class="comment">#read_excel()  </span></div><div class="line">    write_excel()</div></pre></td></tr></table></figure></p>
 <h2 id="爬取拉勾网信息并保存为xls格式"><a href="#爬取拉勾网信息并保存为xls格式" class="headerlink" title="爬取拉勾网信息并保存为xls格式"></a>爬取拉勾网信息并保存为xls格式</h2><p><strong>拉勾网分析</strong><br>了解了这个lxml库的使用，那么开始对拉勾网的网页数据结构进行分析爬取。<br>使用Chrome/Firefox打开<a href="https://www.lagou.com/" target="_blank" rel="external">拉勾网</a>，这里以Python岗位为例。在搜索栏输入Python，然后使用F12打开开发者工具，刷新一下，查看到是通过POST方式提交的，数据是通过Ajax（异步加载）得到的：</p>
 <p><img src="http://wx2.sinaimg.cn/large/ee20bc6cgy1fl8rdfzxw3j20q00e6dic.jpg" alt=""></p>
