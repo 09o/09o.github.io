@@ -1,0 +1,25 @@
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 14px;
+    /*background: linear-gradient(to right, hsla(39, 100%, 50%, .8), hsla(39, 100%, 50%, .6), hsla(39, 100%, 50%, .4), hsla(39, 100%, 50%, .2));;
+    */
+    background: linear-gradient(to right, rgb(255, 165, 0, .5), rgb(255, 165, 0, .6),  rgb(0, 128, 0, .5), rgb(0, 128, 0, .3));
+    letter-spacing: 0.05em;
+    line-height: 2.0em;
+}
+
+a {
+    color: #333;
+}
+
+.w {
+    width: 1088px;
+    margin: 0 auto;
+}
