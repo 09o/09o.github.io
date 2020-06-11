@@ -29,6 +29,7 @@
     width: 204px;
 }
 
+.header-nav a.active,
 .header-nav a:hover {
     font-size: 18px;
     text-decoration: none;
@@ -48,6 +49,7 @@
 
 .container .band {
     position: relative;
+    float: left;
     width: 120px;
     height: 100%;
     background: url(../img/kakkiband.png) center 75%/50% no-repeat;
@@ -59,6 +61,7 @@
     left: 15%;
     width: 100px;
     height: 100px;
+    border-radius: 50%;
 }
 
 .bandImg {
@@ -86,7 +89,7 @@
 .sayhi {
     position: absolute;
     overflow: hidden;
-    top: -46%;
+    top: -36%;
     left: 120%;
     width: 300px;
     height: 0px;
@@ -94,9 +97,9 @@
     line-height: 46px;
     font-size: 20px;
     color: #fff;
-    border-radius: 8px 8px 8px 0;
+    border-radius: 18px 18px 0px 0;
     background: #bf87c1;
-    box-shadow: 2px -2px 15px rgba(88, 88, 88, .4);
+    box-shadow: 0px -2px 15px rgba(88, 88, 88, .4);
 }
 
 .connectbar {
@@ -117,8 +120,8 @@
     box-sizing: border-box;
     width: 300px;
     height: 0px;
-    border-radius: 0 18px 18px 18px;
-    background: rgba(255, 255, 255, .8);
+    border-radius: 0 0px 18px 18px;
+    background: rgba(255, 255, 255, 1);
     box-shadow: 0 0px 30px rgba(88, 88, 88, .4);
     z-index: 999;
 }
@@ -211,9 +214,115 @@
     text-decoration: none;
 }
 
+.contents-wrapper {
+    float: right;
+    width: 968px;
+    height: 700px;
+}
 
+.contents-wrapper ul.s1 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 42px 0;
+}
 
+.contents-wrapper li.displayBox {
+    box-sizing: border-box;
+    overflow: hidden;
+    float: left;
+    width: 414px;
+    height: 100%;
+    background: #fff;
+    border-radius: 18px;
+    padding: 0 20px;
+    margin: 0 50px;
+    box-shadow: 0 0px 30px rgba(88, 88, 88, .2);
+}
 
+.contents-wrapper li.displayBox:first-child {
+    margin-right: 40px;
+}
 
+.contents-wrapper li.displayBox:last-child {
+    margin-left: 0px;
+}
 
+.displayBox .topBar {
+    font-size: 20px;
+    color: #e2437a;
+    width: 100%;
+    line-height: 58px;
+}
 
+.topBar i {
+    margin-right: 15px;
+}
+
+.topBar i:last-child {
+    margin-right: 0;
+}
+
+.topBar span {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 80px 0 10px;
+}
+
+.contentArea {
+    overflow: auto;
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    line-height: 2em;
+}
+
+.contentArea h2 {
+    font-size: 16px;
+    padding: 0 20px;
+    font-weight: normal;
+}
+
+.contentArea span {
+    font-size: 12px;
+    display: block;
+    padding: 0 20px 5px;
+    line-height: 1.2em;
+    border-bottom: 2px solid #e2e2e2;
+}
+
+.contentArea .textContent {
+    padding: 5px 20px 0;
+    font-size: 16px;
+    font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;;
+}
+
+.contentArea h2:first-child {
+    border-bottom: 2px solid #e2e2e2;
+}
+
+.bottomBar {
+    width: 100%;
+    line-height: 58px;
+}
+
+.bottomBar li {
+    width: 33.3%;
+    float: left;
+}
+
+.bottomBar a {
+    font-size: 24px;
+    color: #e2437a;
+    text-align: center;
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    border-radius: 18px;
+}
+
+.bottomBar a:hover {
+    background: #e2437a;
+    color: #fff;
+}
