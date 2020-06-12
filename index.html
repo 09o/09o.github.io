@@ -6,13 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>喜子哥.fan.cn</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/loading.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./font-awesome/css/all.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div class="loading-wrapper">
+        <div class="loading">
+            <div style="color: #7e1083" class="la-triangle-skew-spin la-3x">
+                <div></div>
+            </div>
+        </div>
+    </div>
     <div class="header-wrapper clearfix">
         <div class="header-nav clearfix w">
             <ul>
@@ -37,7 +46,7 @@
                 <li><a href="javascript:;">
                         <i class="fas fa-compact-disc"></i>
                         <span>ミュージック／音乐</span></a></li>
-                <li><a href="javascript:;">
+                <li><a href="./about/index.html">
                         <i class="fas fa-id-badge"></i>
                         <span>紹介／关于喜子</span></a></li>
             </ul>
@@ -190,6 +199,13 @@
             </ul>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                $(".loading-wrapper").fadeOut(500);
+            },1500);
+        });
+    </script>
 </body>
 
 </html>
