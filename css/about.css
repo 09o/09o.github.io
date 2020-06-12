@@ -1,3 +1,7 @@
+.content-pro::-webkit-scrollbar {
+    display: none;
+}
+
 .content-pro {
     overflow: auto;
     float: left;

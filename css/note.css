@@ -1,0 +1,14 @@
+.note-message {
+    position: relative;
+    width: 460px;
+    height: 560px;
+    margin: 0 auto;
+    background: url(../img/85178.png) 0 0/contain no-repeat;
+}
+
+.note-message span {
+    font-size: 18px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
